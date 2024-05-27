@@ -1,0 +1,53 @@
+.imagebutton_button {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-size: 16px;
+}
+
+.editvalue_label {
+    color: rgb(255, 255, 255);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.imagebutton_img {
+    width: 44px;
+    height: 44px;
+}
+
+.edition_value_container {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 172px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center;
+}
+
+.edition_container {
+    flex-direction: column;
+    align-self: auto;
+    align-items: center;
+}
+
+.editionfeature_label {
+    color: rgb(165, 165, 165);
+}
+
+#EditSideBar {
+}
