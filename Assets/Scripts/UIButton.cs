@@ -16,6 +16,4 @@ namespace AP
             this.Held = held;
         }
     }
-
-
 }

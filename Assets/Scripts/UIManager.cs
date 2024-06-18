@@ -14,6 +14,7 @@ namespace AP
         private float threshold = 0.15f;
         private bool isButtonPressed = false;
 
+        // TODO: mudar para o outro metodo melhor
         private void OnEnable()
         {
             UIDocument document = GameObject.Find("UIDocument").GetComponent<UIDocument>();
