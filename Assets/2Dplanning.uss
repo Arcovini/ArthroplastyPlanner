@@ -1,0 +1,9 @@
+.basic-typography {
+    color: rgb(255, 255, 255);
+}
+
+.child-elements * {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-size: 20px;
+}

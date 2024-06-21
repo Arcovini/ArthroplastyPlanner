@@ -1,9 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1;">
-        <ui:VisualElement name="Sagital" style="flex-grow: 1; background-color: rgb(220, 220, 220);">
-            <ui:VisualElement name="P0" style="flex-grow: 1; background-color: rgb(0, 255, 0); width: 64px; height: 64px; position: absolute; top: 212px; left: 166px;" />
-            <ui:VisualElement name="P1" style="flex-grow: 1; width: 64px; height: 64px; position: absolute; top: 216px; left: 412px; background-color: rgb(255, 0, 0);" />
-        </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 1; align-items: stretch; justify-content: flex-start;">
+        <ui:VisualElement name="Sagital" style="flex-grow: 1; background-color: rgb(50, 50, 50); width: auto; align-items: stretch;" />
         <ui:Slider label="Slider" high-value="100" />
     </ui:VisualElement>
 </ui:UXML>

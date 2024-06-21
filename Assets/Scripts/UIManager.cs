@@ -10,11 +10,23 @@ namespace AP
 
     public class UIManager : MonoBehaviour
     {
+        public class UIButtonAction
+        {
+            public Action Clicked = null;
+            public Action Held = null;
+
+            public UIButtonAction(Action clicked = null, Action held = null)
+            {
+                this.Clicked = clicked;
+                this.Held = held;
+            }
+        }
+        
         private float timer = 0.0f;
         private float threshold = 0.15f;
         private bool isButtonPressed = false;
 
-        // TODO: mudar para o outro metodo melhor
+        // TODO: refactor
         private void OnEnable()
         {
             UIDocument document = GameObject.Find("UIDocument").GetComponent<UIDocument>();

@@ -32,14 +32,14 @@ namespace AP
             this.target.UnregisterCallback<PointerUpEvent>(PointerUpHandler);
         }
 
-        private void PointerDownHandler(PointerDownEvent e)
+        public void PointerDownHandler(PointerDownEvent e)
         {
             this.targetStartPosition = this.target.transform.position;
             this.pointerStartPosition = e.position;
             e.target.CapturePointer(e.pointerId);
         }
 
-        private void PointerMoveHandler(PointerMoveEvent e)
+        public void PointerMoveHandler(PointerMoveEvent e)
         {
             if(e.target.HasPointerCapture(e.pointerId))
             {
@@ -52,7 +52,7 @@ namespace AP
             }
         }
 
-        private void PointerUpHandler(PointerUpEvent e)
+        public void PointerUpHandler(PointerUpEvent e)
         {
             e.target.ReleasePointer(e.pointerId);
         }

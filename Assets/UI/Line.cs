@@ -7,49 +7,35 @@ namespace AP
 {
     public class Line : VisualElement
     {
-        private Vector3 start;
-        private Vector3 end;
+        private Point p0;
+        private Point p1;
 
         private Color color;
         private float thickness;
 
-        private MeshWriteData mesh;
-
-        public Line(Vector3 p0, Vector3 p1, Color color, float thickness)
+        public Line(Point p0, Point p1, Color color, float thickness)
         {
-            this.start = p0;
-            this.end = p1;
+            this.p0 = p0;
+            this.p1 = p1;
             this.color = color;
             this.thickness = thickness;
 
             generateVisualContent += OnGenerateVisualContent;
         }
 
-        public void UpdatePosition(Vector3 p0, Vector3 p1)
-        {
-            // Update line position
-        }
-
         private void OnGenerateVisualContent(MeshGenerationContext context)
         {
-            float angleDeg = Vector2.Angle(this.start, this.end);
+            Painter2D painter = context.painter2D;
 
-            this.mesh = context.Allocate(4, 6);
-            
-            Vertex[] vertices = new Vertex[4];
-            vertices[0].position = this.start - new Vector3(0, this.thickness / 2, 0);
-            vertices[1].position = this.start + new Vector3(0, this.thickness / 2, 0);
-            vertices[2].position = this.end + new Vector3(0, this.thickness / 2, 0);
-            vertices[3].position = this.end - new Vector3(0, this.thickness / 2, 0);
+            painter.strokeColor = this.color;
+            painter.lineWidth = this.thickness;
+            painter.lineJoin = LineJoin.Miter;
+            painter.lineCap = LineCap.Butt;
 
-            for(int index = 0; index < vertices.Length; index++)
-            {
-                vertices[index].position += Vector3.forward * Vertex.nearZ;
-                vertices[index].tint = this.color;
-            }
-
-            mesh.SetAllVertices(vertices);
-            mesh.SetAllIndices(new ushort[] { 0, 3, 1, 1, 3, 2 });
+            painter.BeginPath();
+            painter.MoveTo(p0.position);
+            painter.LineTo(p1.position);
+            painter.Stroke();
         }
     }
 }

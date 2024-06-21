@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 namespace AP
 {
-    public class FriedmanLine : MonoBehaviour
+    public class Friedman : MonoBehaviour
     {
         private void OnEnable()
         {
@@ -13,10 +13,12 @@ namespace AP
             VisualElement root = document.rootVisualElement;
 
             VisualElement sagital = root.Q<VisualElement>("Sagital");
-            DragAndDropManipulator p0 = new(root.Q<VisualElement>("P0"));
-            DragAndDropManipulator p1 = new(root.Q<VisualElement>("P1"));
 
-            sagital.Add(new Line(new Vector2(200, 500), new Vector2(500, 600), Color.blue, 5));
+            Point p0  = new Point(new Vector2(200, 500), 50.0f, Color.blue);
+            Point p1  = new Point(new Vector2(500, 500), 50.0f, Color.red);
+            Link link = new Link(p0, p1);
+
+            sagital.Add(link);
         }
     }   
 }

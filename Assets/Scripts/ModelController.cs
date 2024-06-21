@@ -19,8 +19,5 @@ namespace AP
        
         public static void FixedStepTranslate(Vector3 dir) => model.transform.Translate(dir * fixedTranslationStepSize, Space.World);
         public static void FixedStepRotate(Vector3 axis) => model.transform.Rotate(axis * fixedRotationStepSize, Space.Self);
-
-    
-
     }
 }

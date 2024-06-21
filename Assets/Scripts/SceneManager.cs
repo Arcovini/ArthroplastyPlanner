@@ -8,12 +8,10 @@ namespace AP
     {
         // TODO: refactor
         [SerializeField] private GameObject model;
-        private UIManager uiManager;
 
         private void Awake()
         {
             ModelController.model = this.model;
-            this.uiManager = GetComponent<UIManager>();
         }
     }
 }
