@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace AP
 {
+    // TODO: REFACTOR TO SMOOTH CAMERA
+
     [RequireComponent(typeof(Camera))]
     public class ArcballCamera : MonoBehaviour
     {

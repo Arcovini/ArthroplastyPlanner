@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Friedman.unity
+    guid: efc076d4563a7854b97f9e1c0c33bbca
+  - enabled: 1
+    path: Assets/Scenes/Planner.unity
+    guid: 35bcab0d81cfe1a4783695a62498e927
   m_configObjects: {}

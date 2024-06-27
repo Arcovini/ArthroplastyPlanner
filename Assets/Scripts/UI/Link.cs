@@ -21,7 +21,7 @@ namespace AP
             this.p0.link = this;
             this.p1.link = this;
 
-            this.line = new Line(p0, p1, Color.white, 5.0f);
+            this.line = new Line(p0, p1, Color.white, 3.0f);
 
             Add(line);
             Add(p0);

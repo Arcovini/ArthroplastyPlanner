@@ -16,7 +16,7 @@ namespace AP
         private Vector3 pointerStartPosition;
 
         private float radius = 1.0f;
-        private float outlineThickness = 5.0f;
+        private float outlineThickness = 3.0f;
         private Color color;
 
         public Point(Vector2 position, float radius, Color color)

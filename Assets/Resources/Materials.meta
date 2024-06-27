@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 32ef14863966c24489683a649bf4690e
+=======
+guid: 1405d8ec40aeb1e4dbe721b277d8143f
+>>>>>>> 5533fcd (refactor: cleaning the project)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

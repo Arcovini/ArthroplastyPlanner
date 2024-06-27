@@ -39,7 +39,7 @@ public class UIViewToggle : VisualElement
 
     private Button button_container;
 
-    private const string styleResource = "StyleSheetViewToggle";
+    private const string styleResource = "Styles/StyleSheetViewToggle";
     private const string uss_viewtoggle_container = "viewtoggle_container";
     private const string uss_viewtoggle_bgimg = "viewtoggle_bgimg";
 

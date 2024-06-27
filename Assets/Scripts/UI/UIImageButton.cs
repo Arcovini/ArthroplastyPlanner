@@ -23,7 +23,7 @@ public class UIImageButton : Button
         }
     }
 
-    private const string styleResource = "StyleSheetImgButton";
+    private const string styleResource = "Styles/StyleSheetImgButton";
     private const string uss_imgbutton_container = "imagebutton_button";
     private const string uss_imgbutton_bgimg = "imagebutton_img";
 
