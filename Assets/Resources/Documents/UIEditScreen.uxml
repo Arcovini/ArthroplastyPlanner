@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Resources/StyleSheetViewToggle.uss?fileID=7433441132597879392&amp;guid=39a4628646b654d2690cfc5637c48db3&amp;type=3#StyleSheetViewToggle" />
-    <Style src="project://database/Assets/Resources/StyleSheetImgButton.uss?fileID=7433441132597879392&amp;guid=acafd8fe13abe4c58822e40f2890c9da&amp;type=3#StyleSheetImgButton" />
+    <Style src="project://database/Assets/Resources/Styles/StyleSheetViewToggle.uss?fileID=7433441132597879392&amp;guid=39a4628646b654d2690cfc5637c48db3&amp;type=3#StyleSheetViewToggle" />
+    <Style src="project://database/Assets/Resources/Styles/StyleSheetImgButton.uss?fileID=7433441132597879392&amp;guid=acafd8fe13abe4c58822e40f2890c9da&amp;type=3#StyleSheetImgButton" />
     <ui:VisualElement name="Header" style="flex-grow: 0; align-self: flex-start; justify-content: flex-start; align-items: flex-start; flex-direction: row; height: auto; background-color: rgb(77, 77, 77); max-height: none; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px; flex-shrink: 0; width: 100%; flex-basis: auto;">
         <ui:VisualElement name="structurevisbility_container" class="header_container">
             <ui:Label tabindex="-1" text="Visão das estruturas" parse-escape-sequences="true" display-tooltip-when-elided="true" class="header_label" />
@@ -23,7 +23,7 @@
             <ui:Label tabindex="-1" text="Inclinação" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editionfeature_label" />
             <ui:VisualElement class="edition_value_container" style="flex-grow: 1;">
                 <UIImageButton promptTexture="Textures/Planner/Btn_rotate_Down" name="buttonPitchLeft" />
-                <ui:Label tabindex="-1" text="0°" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editvalue_label" />
+                <ui:Label tabindex="-1" text="0°" parse-escape-sequences="true" display-tooltip-when-elided="true" name="labelPitchDistance" class="editvalue_label" />
                 <UIImageButton promptTexture="Textures/Planner/Btn_rotate_Up" name="buttonPitchRight" />
             </ui:VisualElement>
         </ui:VisualElement>
@@ -31,7 +31,7 @@
             <ui:Label tabindex="-1" text="Versão" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editionfeature_label" />
             <ui:VisualElement class="edition_value_container" style="flex-grow: 1;">
                 <UIImageButton promptTexture="Textures/Planner/Btn_rotate_Left" name="buttonYawLeft" />
-                <ui:Label tabindex="-1" text="0°" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editvalue_label" />
+                <ui:Label tabindex="-1" text="0°" parse-escape-sequences="true" display-tooltip-when-elided="true" name="labelYawDistance" class="editvalue_label" />
                 <UIImageButton promptTexture="Textures/Planner/Btn_rotate_Right" name="buttonYawRight" />
             </ui:VisualElement>
         </ui:VisualElement>
@@ -39,7 +39,7 @@
             <ui:Label tabindex="-1" text="Rotação" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editionfeature_label" />
             <ui:VisualElement class="edition_value_container" style="flex-grow: 1;">
                 <UIImageButton promptTexture="Textures/Planner/Btn_rotate_SideLeft" name="buttonRollLeft" />
-                <ui:Label tabindex="-1" text="0°" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editvalue_label" />
+                <ui:Label tabindex="-1" text="0°" parse-escape-sequences="true" display-tooltip-when-elided="true" name="labelRollDistance" class="editvalue_label" />
                 <UIImageButton promptTexture="Textures/Planner/Btn_rotate_SideRight" name="buttonRollRight" />
             </ui:VisualElement>
         </ui:VisualElement>

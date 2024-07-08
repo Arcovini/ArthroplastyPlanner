@@ -17,7 +17,7 @@
 .viewtoggle_bgimg {
     width: 50px;
     height: 50px;
-    background-image: url("project://database/Assets/Resources/Textures/scapula-2.png?fileID=2800000&guid=0c703e1fac212474f9b0b09e2c1d66e6&type=3#scapula-2");
+    background-image: url("project://database/Assets/Resources/Textures/Planner/scapula-2.png?fileID=2800000&guid=0c703e1fac212474f9b0b09e2c1d66e6&type=3#scapula-2");
     align-self: center;
     -unity-background-scale-mode: stretch-to-fill;
     align-items: center;
@@ -61,4 +61,11 @@
 }
 
 .imagebutton_img {
+}
+
+.unity-text-element {
+}
+
+.unity-label {
+    align-items: auto;
 }

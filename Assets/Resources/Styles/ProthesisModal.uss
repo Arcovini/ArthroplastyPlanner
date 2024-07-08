@@ -1,0 +1,3 @@
+.elm_container {
+    -unity-text-align: lower-left;
+}
