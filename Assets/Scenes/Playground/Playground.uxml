@@ -1,0 +1,75 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/USS/StyleSheetViewToggle.uss?fileID=7433441132597879392&amp;guid=39a4628646b654d2690cfc5637c48db3&amp;type=3#StyleSheetViewToggle" />
+    <Style src="project://database/Assets/Resources/UI/USS/StyleSheetImgButton.uss?fileID=7433441132597879392&amp;guid=acafd8fe13abe4c58822e40f2890c9da&amp;type=3#StyleSheetImgButton" />
+    <ui:VisualElement name="Header" style="flex-grow: 0; align-self: flex-start; justify-content: flex-start; align-items: flex-start; flex-direction: row; height: auto; background-color: rgb(77, 77, 77); max-height: none; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px; flex-shrink: 0; width: 100%; flex-basis: auto;">
+        <ui:VisualElement name="structurevisbility_container" class="header_container">
+            <ui:Label tabindex="-1" text="Visão das estruturas" parse-escape-sequences="true" display-tooltip-when-elided="true" class="header_label" />
+            <ui:VisualElement name="structuretoggle_container" style="flex-direction: row;">
+                <UIViewToggle />
+                <UIViewToggle promptTexture="UI/Textures/Planner/protese-2" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="DICOMvisibility_container" class="header_container">
+            <ui:Label tabindex="-1" text="Visão dos exames" parse-escape-sequences="true" display-tooltip-when-elided="true" class="header_label" />
+            <ui:VisualElement name="structuretoggle_container" style="flex-direction: row;">
+                <UIViewToggle promptTexture="UI/Textures/Planner/plano_axial-2" name="UIViewToggle" />
+                <UIViewToggle promptTexture="UI/Textures/Planner/plano_coronal-2" />
+                <UIViewToggle promptTexture="UI/Textures/Planner/plano_sagital-2" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="EditSideBar" style="background-color: rgb(77, 77, 77); padding-top: 16px; padding-right: 16px; padding-bottom: 16px; padding-left: 16px; max-width: 250px; justify-content: flex-start; align-items: center; align-self: flex-end; margin-top: 24px; margin-right: 24px; margin-bottom: 24px; margin-left: 24px; border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px; border-bottom-left-radius: 12px;">
+        <ui:VisualElement name="InclinationContainer" class="edition_container">
+            <ui:Label tabindex="-1" text="Inclinação" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editionfeature_label" />
+            <ui:VisualElement class="edition_value_container" style="flex-grow: 1;">
+                <UIImageButton promptTexture="UI/Textures/Planner/Btn_rotate_Down" name="buttonPitchLeft" />
+                <ui:Label tabindex="-1" text="0°" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editvalue_label" />
+                <UIImageButton promptTexture="UI/Textures/Planner/Btn_rotate_Up" name="buttonPitchRight" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="InclinationContainer" class="edition_container">
+            <ui:Label tabindex="-1" text="Versão" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editionfeature_label" />
+            <ui:VisualElement class="edition_value_container" style="flex-grow: 1;">
+                <UIImageButton promptTexture="UI/Textures/Planner/Btn_rotate_Left" name="buttonYawLeft" />
+                <ui:Label tabindex="-1" text="0°" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editvalue_label" />
+                <UIImageButton promptTexture="UI/Textures/Planner/Btn_rotate_Right" name="buttonYawRight" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="InclinationContainer" class="edition_container">
+            <ui:Label tabindex="-1" text="Rotação" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editionfeature_label" />
+            <ui:VisualElement class="edition_value_container" style="flex-grow: 1;">
+                <UIImageButton promptTexture="UI/Textures/Planner/Btn_rotate_SideLeft" name="buttonRollLeft" />
+                <ui:Label tabindex="-1" text="0°" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editvalue_label" />
+                <UIImageButton promptTexture="UI/Textures/Planner/Btn_rotate_SideRight" name="buttonRollRight" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="InclinationContainer" class="edition_container">
+            <ui:Label tabindex="-1" text="Profundidade" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editionfeature_label" />
+            <ui:VisualElement class="edition_value_container" style="flex-grow: 1;">
+                <UIImageButton promptTexture="UI/Textures/Planner/minus" name="buttonDepthBackwards" />
+                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editvalue_label" />
+                <UIImageButton promptTexture="UI/Textures/Planner/plus" name="buttonDepthForward" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="InclinationContainer" class="edition_container">
+            <ui:Label tabindex="-1" text="Horizontal" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editionfeature_label" />
+            <ui:VisualElement class="edition_value_container" style="flex-grow: 1;">
+                <UIImageButton promptTexture="UI/Textures/Planner/arrowleft" name="buttonHorizontalLeft" />
+                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editvalue_label" />
+                <UIImageButton promptTexture="UI/Textures/Planner/arrowright" name="buttonHorizontalRight" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="InclinationContainer" class="edition_container">
+            <ui:Label tabindex="-1" text="Vertical" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editionfeature_label" />
+            <ui:VisualElement class="edition_value_container" style="flex-grow: 1;">
+                <UIImageButton promptTexture="UI/Textures/Planner/arrowdown" name="buttonVerticalDown" />
+                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" class="editvalue_label" />
+                <UIImageButton promptTexture="UI/Textures/Planner/arrowup" name="buttonVerticalUp" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="ButtonPanel" style="flex-grow: 1; flex-direction: row; align-self: auto; background-color: rgb(103, 103, 103);">
+        <AP.CustomVisualElements.CustomButton name="A" />
+        <ui:Slider label="Slider" high-value="100" name="Slider" style="width: 799px;" />
+    </ui:VisualElement>
+</ui:UXML>

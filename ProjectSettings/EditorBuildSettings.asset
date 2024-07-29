@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Friedman.unity
+    path: Assets/Scenes/Friedman/Friedman.unity
     guid: efc076d4563a7854b97f9e1c0c33bbca
   - enabled: 1
-    path: Assets/Scenes/Planner.unity
-    guid: 35bcab0d81cfe1a4783695a62498e927
+    path: Assets/Scenes/Planner/Planner.unity
+    guid: 9ad71e3e0eda42e4382e1bb8442bcaea
   m_configObjects: {}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using System;
 using System.IO;
 using FellowOakDicom;
@@ -9,7 +10,7 @@ namespace AP
 {
     public class Loader
     {
-        public static DicomFile[] OpenFolder(string path)
+        public static DicomFile[] LoadFiles(string path)
         {
             DicomFile[] files = null;
             
@@ -29,5 +30,7 @@ namespace AP
 
             return files;
         }
+
+        public static DICOM LoadDicom(string path) => new DICOM(LoadFiles(path));
     }
 }
