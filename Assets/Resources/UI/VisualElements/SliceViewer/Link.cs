@@ -22,27 +22,16 @@ namespace AP.CustomVisualElements
         private const string startPointStyleClass = "startPoint";
         private const string endPointStyleClass = "endPoint";
 
-        public Link()
+        public void SetVisualElements()
         {
             styleSheets.Add(Resources.Load<StyleSheet>(styleSheet));
             AddToClassList(styleClass);
-        }
 
-        public void SetVisualElements()
-        {
             StartPoint = new Point(StartPointColor, OutlineColor, Radius, Thickness);
             EndPoint = new Point(EndPointColor, OutlineColor, Radius, Thickness);
 
-            StartPoint.AddManipulator(new DragAndDropManipulator(StartPoint));
-            EndPoint.AddManipulator(new DragAndDropManipulator(EndPoint));
-
             StartPoint.AddToClassList(startPointStyleClass);
             EndPoint.AddToClassList(endPointStyleClass);
-
-            StartPoint.style.width = 2 * Radius;
-            StartPoint.style.height = 2 * Radius;
-            EndPoint.style.width = 2 * Radius;
-            EndPoint.style.height = 2 * Radius;
 
             Add(StartPoint);
             Add(EndPoint);
@@ -58,9 +47,10 @@ namespace AP.CustomVisualElements
             painter.lineCap = LineCap.Butt;
 
             painter.BeginPath();
-            painter.MoveTo(new Vector2(0, 0));
-            painter.LineTo(new Vector2(0, 0));
+            painter.MoveTo(StartPoint.Position);
+            painter.LineTo(EndPoint.Position);
             painter.Stroke();
+            painter.ClosePath();
         }
 
         public new class UxmlFactory : UxmlFactory<Link, UxmlTraits> { }
@@ -87,6 +77,8 @@ namespace AP.CustomVisualElements
                 link.Thickness = thickness.GetValueFromBag(bag, cc);
 
                 link.SetVisualElements();
+
+                link.generateVisualContent += link.OnGenerateVisualContent;
             }
         }
     }
