@@ -12,13 +12,14 @@ namespace AP
         public Slider Slider;
 
         public Slice Slice = null;
-        public Camera Camera = null;
+        public SliceCamera Camera = null;
 
         public SliceViewerView(VisualElement root)
         {
             SliceView = root.Q<VisualElement>("Slice");
             Slider = root.Q<Slider>("Slider");
 
+            SliceView.RegisterCallback<WheelEvent>(OnMouseScroll);
             Slider.RegisterCallback<ChangeEvent<float>>(OnSliderValueChanged);
         }
 
@@ -29,13 +30,10 @@ namespace AP
 
             var camObj = GameObject.Instantiate(Resources.Load("Prefabs/SliceCamera")) as GameObject;
 
-            Camera = camObj.GetComponent<Camera>();
-            Camera.orthographicSize = 0.5f * Slice.Width;
-            Camera.transform.position = Slice.Position - 2.0f * Slice.Transform.forward;
-            Camera.transform.LookAt(Slice.Transform);
-            Camera.targetTexture = new RenderTexture(1024, 1024, 0, RenderTextureFormat.ARGB32);
+            Camera = camObj.GetComponent<SliceCamera>();
+            Camera.Init(Slice);
 
-            SliceView.style.backgroundImage = new StyleBackground(Background.FromRenderTexture(Camera.targetTexture));
+            SliceView.style.backgroundImage = new StyleBackground(Background.FromRenderTexture(Camera.RenderTexture));
         }
 
         public void OnSliderValueChanged(ChangeEvent<float> e)
@@ -65,8 +63,20 @@ namespace AP
             Slice.Position = r.GetPoint(2.0f * distance * Mathf.Clamp(value, 0.01f, 0.99f));
         }
 
+        private void OnMouseScroll(WheelEvent e)
+        {
+            if(Camera is not null)
+            {
+                float xoffset =  (2 * e.localMousePosition.x - SliceView.resolvedStyle.width) / SliceView.resolvedStyle.width;
+                float yoffset = -(2 * e.localMousePosition.y - SliceView.resolvedStyle.height) / SliceView.resolvedStyle.height;
+                
+                Camera.Zoom(new Vector2(xoffset, yoffset), e.delta.y);
+            }
+        }
+
         public void Dispose()
         {
+            SliceView.UnregisterCallback<WheelEvent>(OnMouseScroll);
             Slider.UnregisterCallback<ChangeEvent<float>>(OnSliderValueChanged);
         }
     }

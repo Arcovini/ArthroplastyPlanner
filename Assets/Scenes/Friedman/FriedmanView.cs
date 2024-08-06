@@ -34,7 +34,7 @@ namespace AP
             Plane ZY = new Plane(volume.BoundsMax.z - volume.BoundsMin.z, volume.BoundsMax.y - volume.BoundsMin.y);
 
             Slice axialSlice = new Slice(volume, XZ.Width, XZ.Height, volume.Position, new Vector3(90.0f, 0.0f, 0.0f));
-            Slice coronalSlice = new Slice(volume, ZY.Width, ZY.Height, volume.Position, new Vector3(0.0f, 90.0f, 0.0f));
+            Slice coronalSlice = new Slice(volume, ZY.Width, ZY.Height, volume.Position, new Vector3(0.0f, 0.0f, 0.0f));
 
             this.axialSliceView.SetView(axialSlice);
             this.coronalSliceView.SetView(coronalSlice);
