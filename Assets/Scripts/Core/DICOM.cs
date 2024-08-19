@@ -85,10 +85,10 @@ namespace AP
             Volume.Texture = new Texture3D(x, y, z, TextureFormat.RGB24, true);
             Color[] colors = new Color[x * y * z];
 
-            // Window range
+            // // Window range
             float minRange = WindowCenter - 0.5f * WindowWidth;
             float maxRange = WindowCenter + 0.5f * WindowWidth;
-
+            
             z = 0;
             foreach(DicomFile file in Files)
             {

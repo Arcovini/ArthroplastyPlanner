@@ -36,7 +36,7 @@ namespace AP.CustomVisualElements
             Add(StartPoint);
             Add(EndPoint);
         }
-            
+
         private void OnGenerateVisualContent(MeshGenerationContext context)
         {
             Painter2D painter = context.painter2D;

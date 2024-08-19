@@ -12,15 +12,12 @@ namespace AP
 
     public class ZoomCommand : ISliceCameraCommand
     {
-        private Vector3 previousPosition;
+        private Vector3 lastPosition;
 
         private SliceCamera camera;
         private Vector2 mousePos;
 
-        private const float scaleStepSize = 0.9f;
-        private const float distStepSize = 0.5f;
-
-        private static int steps = 0;
+        private const float stepSize = 0.9f;
 
         public ZoomCommand(SliceCamera camera, Vector2 mousePos)
         {
@@ -29,24 +26,20 @@ namespace AP
         }
 
         public void Execute()
-        {
-            // Vector2 tangentDir = this.mousePos * this.camera.Size;
-            // Vector3 targetPosition = this.camera.InitialPosition + (this.camera.Transform.right * tangentDir.x) + (this.camera.Transform.up * tangentDir.y);
+        {   
+            Vector2 tangentDir = this.mousePos * this.camera.Size;
+            Vector3 targetPoint = this.camera.Position + (this.camera.Transform.right * tangentDir.x) + (this.camera.Transform.up * tangentDir.y);
 
-            // this.previousPosition = this.camera.Position;
-            // this.camera.Position = Vector3.Lerp(this.camera.Position, targetPosition, distStepSize);
+            this.lastPosition = this.camera.Position;
+            this.camera.Position = Vector3.Lerp(targetPoint, this.camera.Position, stepSize);
 
-            // Target position in world space coordinates
-            // Vector3 targetPosition = this.camera.Position + (this.camera.Transform.right * targetOffset.x) + (this.camera.Transform.up * targetOffset.y);
-
-            // TODO: change to lerp
-            this.camera.Size = this.camera.Size * scaleStepSize;
+            this.camera.Size = this.camera.Size * stepSize;
         }
 
         public void Undo()
         {
-
-            this.camera.Size = this.camera.Size / scaleStepSize;
+            this.camera.Position = this.lastPosition;
+            this.camera.Size = this.camera.Size / stepSize;
         }
     }
 

@@ -26,29 +26,7 @@ namespace AP
                 this.dicom.Dispose();
 
             this.dicom = Loader.LoadDicom(path);
-
             FriedmanEvents.SetSliceViews?.Invoke(this.dicom.Volume);
         }
-
-        // public void SetSlicePosition(Slice slice, float value)
-        // {
-        //     // Position the ray at the center of the volume and have it facing the plane's normal direction
-        //     Ray r = new Ray();
-        //     r.origin = Dicom.Volume.Position;
-        //     r.direction = slice.Transform.forward;
-            
-        //     // Get the distance to the closest point inside the volume
-        //     float t = 0.0f;
-        //     Dicom.Volume.Collider.bounds.IntersectRay(r, out t);
-
-        //     // This distance is the maximum travel distance we can go within the volume in that direction
-        //     float distance = Mathf.Abs(t);
-
-        //     // Place the origin at the border of the volume
-        //     r.origin = r.origin - r.direction * distance;
-
-        //     // Set the slice position inside the volume according to the value (0-1) in relation with the maximum travel distance
-        //     slice.Position = r.GetPoint(2.0f * distance * Mathf.Lerp(0.01f, 0.99f, value));
-        // }
     }
 }

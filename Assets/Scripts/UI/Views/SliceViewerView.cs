@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using AP.CustomVisualElements;
 using System;
 
 namespace AP
@@ -10,6 +11,7 @@ namespace AP
     {
         public VisualElement SliceView;
         public Slider Slider;
+        public Link Link;
 
         public Slice Slice = null;
         public SliceCamera Camera = null;
@@ -18,6 +20,7 @@ namespace AP
         {
             SliceView = root.Q<VisualElement>("Slice");
             Slider = root.Q<Slider>("Slider");
+            Link = root.Q<Link>("Link");
 
             SliceView.RegisterCallback<WheelEvent>(OnMouseScroll);
             Slider.RegisterCallback<ChangeEvent<float>>(OnSliderValueChanged);
